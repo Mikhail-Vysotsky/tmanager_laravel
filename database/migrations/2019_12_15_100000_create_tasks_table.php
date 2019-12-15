@@ -8,8 +8,9 @@ class CreateTasksTable extends Migration {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->foreign('who')->references('id')->on('users');
+            $table->integer('who');
             $table->enum('status', ['open', 'in progress', 'done']);
+            $table->foreign('who')->references('id')->on('users')->onDelete('cascade');;
         });
     }
     public function down() {
