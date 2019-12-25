@@ -12,7 +12,9 @@
 */
 
 use App\Tasks;
-use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Request;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,7 +25,7 @@ Route::get('/tasks', function () {
 });
 Route::post('/tasks/add', function (Request $request) {
     $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
+        'title' => 'required|max:255',
     ]);
     if ($validator->fails()) {
         return redirect('/tasks')
@@ -32,7 +34,7 @@ Route::post('/tasks/add', function (Request $request) {
     }
 
     $task = new Tasks;
-    $task->name = $request->name;
+    $task->title = $request->title;
     $task->save();
 
     return redirect('/');

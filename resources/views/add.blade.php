@@ -5,13 +5,13 @@
   <head>
     <title>Add task</title>
 
-    <!-- CSS è JavaScript -->
+    <!-- CSS Ğ¸ JavaScript -->
   </head>
 
   <body>
     <div class="container">
       <nav class="navbar navbar-default">
-        <!-- Ñîäåğæèìîå Navbar -->
+        <!--ÑĞ¾Ğ´ĞµÑ€Ğ¶Ğ°Ğ½Ğ¸Ğµ-->
       </nav>
     </div>
 

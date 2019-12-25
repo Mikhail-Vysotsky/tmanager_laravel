@@ -1,38 +1,37 @@
 <!-- resources/views/tasks.blade.php -->
-
 @extends('add')
 
 @section('content')
 
-<!-- Bootstrap шаблон... -->
+<!-- Bootstrap С€Р°Р±Р»РѕРЅ... -->
 
 <div class="panel-body">
-    <!-- Отображение ошибок проверки ввода -->
+    <!-- РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РѕС€РёР±РѕРє РїСЂРѕРІРµСЂРєРё РІРІРѕРґР° -->
     @include('errors')
 
-    <!-- Форма новой задачи -->
+    <!-- Р¤РѕСЂРјР° РЅРѕРІРѕР№ Р·Р°РґР°С‡Рё -->
     <form action="{{ url('tasks/add') }}" method="POST" class="form-horizontal">
         {{ csrf_field() }}
 
-        <!-- Имя задачи -->
+        <!-- РёРјСЏ Р·Р°РґР°С‡Рё -->
         <div class="form-group">
-            <label for="task" class="col-sm-3 control-label">Задача</label>
+            <label for="task" class="col-sm-3 control-label">Р—Р°РґР°С‡Р°</label>
 
             <div class="col-sm-6">
-                <input type="text" name="name" id="task-name" class="form-control">
+                <input type="text" name="title" id="tasks-title" class="form-control">
             </div>
         </div>
 
-        <!-- Кнопка добавления задачи -->
+        <!-- РљРЅРѕРїРєР° РґРѕР±Р°РІР»РµРЅРёСЏ Р·Р°РґР°С‡Рё -->
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
                 <button type="submit" class="btn btn-default">
-                    <i class="fa fa-plus"></i> Добавить задачу
+                    <i class="fa fa-plus"></i> Р”РѕР±Р°РІРёС‚СЊ Р·Р°РґР°С‡Сѓ
                 </button>
             </div>
         </div>
     </form>
 </div>
 
-<!-- TODO: Текущие задачи -->
+<!-- TODO: РўРµРєСѓС‰РёРµ Р·Р°РґР°С‡Рё -->
 @endsection
