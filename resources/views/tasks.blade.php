@@ -1,6 +1,6 @@
 <!-- resources/views/tasks.blade.php -->
 
-@extends('layouts.add')
+@extends('add')
 
 @section('content')
 
@@ -8,7 +8,7 @@
 
 <div class="panel-body">
     <!-- Отображение ошибок проверки ввода -->
-    @include('common.errors')
+    @include('errors')
 
     <!-- Форма новой задачи -->
     <form action="{{ url('tasks/add') }}" method="POST" class="form-horizontal">
