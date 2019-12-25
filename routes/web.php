@@ -11,16 +11,31 @@
 |
 */
 
+use App\Tasks;
+use Illuminate\Contracts\Validation\Validator;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/tasks', function () {
-    return 'tasks list';
+    return view('tasks');
 });
-Route::get('/tasks/add', function () {
-    return 'add new task';
+Route::post('/tasks/add', function (Request $request) {
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|max:255',
+    ]);
+    if ($validator->fails()) {
+        return redirect('/tasks')
+            ->withInput()
+            ->withErrors($validator);
+    }
+
+    $task = new Tasks;
+    $task->name = $request->name;
+    $task->save();
+
+    return redirect('/');
 });
 Route::get('/tasks/edit/{id_task}', function ($id_task = null) {
     return 'edit task '.$id_task;
