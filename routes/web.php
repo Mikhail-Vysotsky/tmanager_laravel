@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Request;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('/tasks', function () {
     return view('tasks');

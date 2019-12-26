@@ -1,8 +1,8 @@
 <!-- resources/views/common/errors.blade.php -->
 @if (count($errors) > 0)
-    <!-- Список ошибок формы -->
+    <!-- РЎРїРёСЃРѕРє РѕС€РёР±РѕРє С„РѕСЂРјС‹ -->
     <div class="alert alert-danger">
-        <strong>Упс! Что-то пошло не так!</strong>
+        <strong>РЈРїСЃ! Р§С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє!</strong>
 
         <br><br>
 
